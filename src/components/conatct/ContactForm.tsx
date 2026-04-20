@@ -305,43 +305,25 @@ export default function ContactForm({ servicesData }: { servicesData: Service[] 
 
           {/* ===== Footer ===== */}
           <motion.div
-            className="flex lg:justify-between flex-col lg:flex-row items-center gap-6 lg:gap-0"
-            variants={fadeUpVar}
-          >
-            <motion.div
-              className="flex items-center gap-4 text-sm text-white/70 w-fit"
-              variants={fadeUpVar}
-            >
-              <AlertCircle className="mt-0.5 h-5 w-5 text-main-primary shrink-0" />
-              <p>
-                <span className="font-medium">
-                  {t("All the fields are required")}
-                </span>{" "}
-                {t("By sending the form you agree to the")}{" "}
-                <Link href="/terms" className="underline hover:opacity-80">
-                  {t("Terms")} &amp; {t("Conditions")}
-                </Link>{" "}
-                {t("and")}{" "}
-                <Link href="/privacy" className="underline hover:opacity-80">
-                  {t("Privacy Policy")}
-                </Link>
-                .
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeUpVar}>
-              <motion.div whileTap={{ scale: 0.98 }}>
-                <Button
-                  type="submit"
-                  className="cursor-target uppercase bg-main-primary text-main-text hover:bg-white/90 p-6 !rounded-[4px] w-full lg:w-auto"
-                  variant="default"
-                  disabled={loading}
-                >
-                  {loading ? t("Sending") : t("Send Message")}
-                </Button>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+  className="w-full"
+  variants={fadeUpVar}
+>
+  <motion.div
+    className="w-full"
+    variants={fadeUpVar}
+  >
+    <motion.div whileTap={{ scale: 0.98 }} className="w-full">
+      <Button
+        type="submit"
+        className="cursor-target uppercase bg-main-primary text-main-text hover:bg-white/90 p-6 !rounded-[4px] w-full"
+        variant="default"
+        disabled={loading}
+      >
+        {loading ? t("Sending") : t("Send Message")}
+      </Button>
+    </motion.div>
+  </motion.div>
+</motion.div>
         </motion.form>
       </Form>
     </motion.div>

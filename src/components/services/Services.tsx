@@ -296,7 +296,7 @@ export default function Services({
                 </motion.h3>
 
                 <motion.p
-                  className="text-base text-main-primary/80 mt-2 font-medium"
+                  className="text-base text-main-primary/80 mt-2 font-medium text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 1.2 }}
@@ -325,13 +325,13 @@ export default function Services({
                 className="text-center space-y-6"
               >
                 <motion.div
-                  className="prose prose-invert prose-lg max-w-none mx-auto"
+                  className="prose prose-invert prose-lg max-w-none mx-auto text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   <div
-                    className="text-lg leading-relaxed opacity-95 font-medium"
+                    className="text-lg leading-relaxed opacity-95 font-medium text-center"
                     dangerouslySetInnerHTML={{
                       __html: activeService.long_desc,
                     }}
