@@ -1,0 +1,281 @@
+{
+  "title": "Our Services",
+  "subtitle": "Comprehensive digital solutions to elevate your business",
+  "search_placeholder": "Search services...",
+  "filter_all": "All Services",
+  "learn_more": "Learn More",
+  "get_started": "Get Started",
+  "contact_us": "Contact Us",
+  "categories": {
+    "digital_marketing": "Digital Marketing",
+    "development": "Development",
+    "design": "Design & Branding",
+    "consulting": "Consulting"
+  },
+  "services": {
+    "animation_video": {
+      "title": "Animation Video",
+      "category": "design",
+      "blurb": "Tell your story with motion",
+      "short_description": "Transform ideas into mesmerizing visuals that captivate minds and hearts",
+      "description": "Embark on a journey of creativity and excellence with Be Group's Animation Video service. We turn ideas into mesmerizing visuals that captivate minds and hearts—perfect for explainers, product demos, or unforgettable brand stories. Our creative team crafts standout videos with striking style, meticulous detail, and emotional pull—leaving a lasting impact.",
+      "features": [
+        "2D & 3D Animation",
+        "Motion Graphics",
+        "Character Design",
+        "Explainer Videos",
+        "Brand Storytelling",
+        "Product Demos"
+      ],
+      "technologies": ["After Effects", "Cinema 4D", "Blender", "Premiere Pro"],
+      "deliverables": [
+        "Storyboard",
+        "Animation Assets",
+        "Final Video",
+        "Source Files"
+      ],
+      "timeline": "2-6 weeks",
+      "starting_price": "Contact for quote"
+    },
+    "social_media": {
+      "title": "Social Media Management",
+      "category": "digital_marketing",
+      "blurb": "Strategy, content, growth",
+      "short_description": "Complete social media management across all major platforms",
+      "description": "We plan, create, and manage content that grows communities and drives results—tailored for each platform's culture and algorithm. We handle calendars, copy, design, posting, moderation, and performance analytics—so your brand stays consistent and conversion-focused.",
+      "features": [
+        "Content Strategy",
+        "Content Creation",
+        "Community Management",
+        "Paid Social Advertising",
+        "Analytics & Reporting",
+        "Influencer Partnerships"
+      ],
+      "platforms": [
+        "Instagram",
+        "Facebook",
+        "Twitter/X",
+        "LinkedIn",
+        "TikTok",
+        "YouTube",
+        "Snapchat"
+      ],
+      "deliverables": [
+        "Content Calendar",
+        "Creative Assets",
+        "Performance Reports",
+        "Strategy Guide"
+      ],
+      "timeline": "Ongoing monthly",
+      "starting_price": "$1,500/month"
+    },
+    "web_development": {
+      "title": "Web Development",
+      "category": "development",
+      "blurb": "Fast, scalable, secure",
+      "short_description": "High-impact web and e-commerce solutions with modern technology",
+      "description": "Since 2009, Be Group has delivered high-impact web and e-commerce solutions across MENA. We use modern stacks and Agile/Scrum to ship robust, maintainable products—on time. From custom websites to complex e-commerce platforms and mobile applications.",
+      "features": [
+        "Custom Web Applications",
+        "E-commerce Development",
+        "Mobile Applications",
+        "API Development",
+        "Cloud Infrastructure",
+        "Performance Optimization"
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "AWS",
+        "MongoDB"
+      ],
+      "deliverables": [
+        "Responsive Website",
+        "Admin Panel",
+        "Documentation",
+        "Hosting Setup"
+      ],
+      "timeline": "4-12 weeks",
+      "starting_price": "$5,000"
+    },
+    "google_ads": {
+      "title": "Google Ads (AdWords)",
+      "category": "digital_marketing",
+      "blurb": "Premier Partner performance",
+      "short_description": "Data-driven Google Ads campaigns that scale and convert",
+      "description": "Be Group is a 2023 Google Premier Partner with certified strategists, strong optimization scores, and proven spend management. We build data-driven campaigns that scale with comprehensive keyword research, bid strategy optimization, and performance tracking.",
+      "features": [
+        "Campaign Strategy",
+        "Keyword Research",
+        "Ad Creation",
+        "Bid Management",
+        "Quality Score Optimization",
+        "Conversion Tracking"
+      ],
+      "certifications": [
+        "Google Premier Partner",
+        "Google Ads Certified",
+        "Analytics Certified"
+      ],
+      "deliverables": [
+        "Campaign Setup",
+        "Ad Creative",
+        "Performance Reports",
+        "Optimization Recommendations"
+      ],
+      "timeline": "1-2 weeks setup + ongoing",
+      "starting_price": "$2,000 + ad spend"
+    },
+    "seo": {
+      "title": "SEO Optimization",
+      "category": "digital_marketing",
+      "blurb": "Visibility that lasts",
+      "short_description": "Full-stack SEO for sustainable organic growth",
+      "description": "Full-stack SEO: technical audits, on-page optimization, content strategy, and high-quality link building. We pair research with clean IA and UX to grow qualified traffic sustainably. Transparent communication with regular reporting shows what's moving the needle.",
+      "features": [
+        "Technical SEO Audits",
+        "On-Page Optimization",
+        "Content Strategy",
+        "Link Building",
+        "Local SEO",
+        "Performance Tracking"
+      ],
+      "tools": ["SEMrush", "Ahrefs", "Google Analytics", "Search Console"],
+      "deliverables": [
+        "SEO Audit",
+        "Optimization Plan",
+        "Content Calendar",
+        "Monthly Reports"
+      ],
+      "timeline": "3-6 months",
+      "starting_price": "$1,200/month"
+    },
+    "google_maps": {
+      "title": "Google Maps Optimization",
+      "category": "digital_marketing",
+      "blurb": "Be found locally",
+      "short_description": "Local SEO and Google Business Profile optimization",
+      "description": "Optimize your Business Profile to win local intent across Search and Maps. We manage photos, posts, offers, reviews, and messaging to convert discovery into visits and calls. Perfect for businesses with physical locations or local service areas.",
+      "features": [
+        "Business Profile Setup",
+        "Photo Management",
+        "Review Management",
+        "Local Citations",
+        "Posts & Updates",
+        "Messaging Setup"
+      ],
+      "benefits": [
+        "Increased Local Visibility",
+        "More Store Visits",
+        "Higher Review Ratings",
+        "Better Local Rankings"
+      ],
+      "deliverables": [
+        "Optimized Profile",
+        "Photo Library",
+        "Review Strategy",
+        "Monthly Reports"
+      ],
+      "timeline": "2-4 weeks",
+      "starting_price": "$800/month"
+    },
+    "media_production": {
+      "title": "Media Production",
+      "category": "design",
+      "blurb": "Video, audio, motion",
+      "short_description": "End-to-end media production with broadcast-grade quality",
+      "description": "End-to-end production: scripting, directing, shooting, editing, motion graphics, VFX, and sound design. We deliver broadcast-grade results tailored to your brand voice. From corporate videos to commercials and social media content.",
+      "features": [
+        "Video Production",
+        "Audio Recording",
+        "Motion Graphics",
+        "Visual Effects",
+        "Sound Design",
+        "Post-Production"
+      ],
+      "equipment": [
+        "4K Cameras",
+        "Professional Audio",
+        "Lighting Kits",
+        "Drone Footage"
+      ],
+      "deliverables": [
+        "Raw Footage",
+        "Edited Videos",
+        "Audio Files",
+        "Graphics Package"
+      ],
+      "timeline": "3-8 weeks",
+      "starting_price": "$3,000"
+    },
+    "branding": {
+      "title": "Branding & Identity",
+      "category": "design",
+      "blurb": "Identity with purpose",
+      "short_description": "Research-backed visual identities that scale across all touchpoints",
+      "description": "Research-backed visual identities—logos, palettes, typography, guidelines, and assets—that align with your positioning and scale across print and digital touchpoints. We create cohesive brand experiences that resonate with your target audience.",
+      "features": [
+        "Logo Design",
+        "Color Palette",
+        "Typography System",
+        "Brand Guidelines",
+        "Visual Assets",
+        "Brand Strategy"
+      ],
+      "deliverables": [
+        "Logo Package",
+        "Brand Guidelines",
+        "Asset Library",
+        "Style Guide"
+      ],
+      "timeline": "4-8 weeks",
+      "starting_price": "$2,500"
+    },
+    "consultation": {
+      "title": "Business Consultation",
+      "category": "consulting",
+      "blurb": "Roadmaps & strategy",
+      "short_description": "Strategic consulting for marketing and product development",
+      "description": "Marketing and product consulting: market analysis, opportunity mapping, brand development, CX/CRM improvements, and measurable go-to-market plans. We help businesses identify growth opportunities and create actionable strategies.",
+      "features": [
+        "Market Analysis",
+        "Strategy Planning",
+        "Brand Development",
+        "CX/CRM Optimization",
+        "Go-to-Market Plans",
+        "Performance Metrics"
+      ],
+      "expertise": [
+        "Digital Transformation",
+        "Market Research",
+        "Business Strategy",
+        "Growth Planning"
+      ],
+      "deliverables": [
+        "Strategy Document",
+        "Action Plan",
+        "Market Research",
+        "Roadmap"
+      ],
+      "timeline": "2-4 weeks",
+      "starting_price": "$150/hour"
+    }
+  },
+  "Animation Video": "Animation Video",
+  "Tell your story with motion": "Tell your story with motion",
+  "Our Services": "Our Services",
+  "We provide the full stack of creative services": "We provide the full stack of creative services",
+  "Click for details": "Click for details",
+  "About This Service": "About This Service",
+  "What We Offer": "What We Offer",
+  "Key Benefits": "Key Benefits",
+  "Ready to Get Started?": "Ready to Get Started?",
+  "Let’s discuss how our": "Let’s discuss how our",
+  "service can help your business grow and achieve its goals": "service can help your business grow and achieve its goals",
+  "Get in Touch": "Get in Touch",
+  "View All Services": "View All Services",
+  "More Details": "More Details",
+  "Service Family": "Service Family"
+}
