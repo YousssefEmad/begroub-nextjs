@@ -167,6 +167,8 @@ export interface ContactDataTypes {
   email: string;
   phone: string;
   address: string;
+  map_url?: string;
+  map_link?: string;
 }
 
 export interface SocialMediaTypes {
