@@ -110,7 +110,7 @@ export default function ServiceDetailPage({
           </motion.div>
 
           {/* Features and Benefits Grid - Dynamic from Tabs */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-8">
+          {/* <div className="grid lg:grid-cols-2 gap-8 mb-8">
             {service.tabs
               .sort((a, b) => a.order - b.order)
               .map((tab, index) => (
@@ -131,14 +131,14 @@ export default function ServiceDetailPage({
                     {tab.name}
                   </h3>
 
-                  {/* Render long_desc <ul><li>...</li></ul> the same style as cards with primary-colored markers */}
+                  
                   <div
                     className="space-y-4 service-tab-content [&_ul]:list-disc [&_ul]:pl-6 [&_ul_li]:marker:text-main-primary"
                     dangerouslySetInnerHTML={{ __html: tab.long_desc }}
                   />
                 </motion.div>
               ))}
-          </div>
+          </div> */}
 
           {/* Image Slider Section */}
           {service?.images && service.images.length > 0 && (
