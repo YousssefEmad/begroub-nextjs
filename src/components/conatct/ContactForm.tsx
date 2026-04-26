@@ -256,7 +256,7 @@ export default function ContactForm({ servicesData }: { servicesData: Service[] 
                     </FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
-                        <SelectTrigger className="cursor-target bg-transparent border-white/70 h-14 rounded-[6px] focus:ring-0 focus:ring-offset-0 text-white [&>span:not([data-placeholder])]:text-white [&>span[data-placeholder]]:text-white/40">
+                        <SelectTrigger dir={locale === "ar" ? "rtl" : "ltr"} className="cursor-target bg-transparent border-white/70 h-14 rounded-[6px] focus:ring-0 focus:ring-offset-0 text-white [&>span:not([data-placeholder])]:text-white [&>span[data-placeholder]]:text-white/40">
                           <SelectValue placeholder={t("Select A Service")} />
                         </SelectTrigger>
                       </FormControl>

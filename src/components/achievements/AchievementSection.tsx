@@ -58,6 +58,7 @@ export default function AchievementSection({
               className="py-4 xl:py-8 flex flex-col gap-2 justify-center items-center text-center"
             >
               <h3 className="text-4xl text-main-primary font-bold">
+                +
                 {achievement.number}
               </h3>
               <p className="text-gray-600 text-lg sm:text-base lg:text-lg">
