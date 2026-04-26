@@ -87,68 +87,70 @@ export default function CarouselComponent({ projectsData, className }: Props) {
           direction: isRTL ? "rtl" : "ltr",
         }}
       >
-        {/* logical start margin so two full cards are visible with 40% width */}
         <CarouselContent className="-ms-4">
           {projectsData.data.categories
             .flatMap((category) => category.projects)
             .map((project, index) => (
               <CarouselItem
-                key={project.index}
-                className={[
-                  "ps-4", // gap between cards (logical start)
-                  "basis-full", // sm & below: 1 card
-                  "md:basis-[40%]", // md–lg: ~2.5 cards
-                  "xl:basis-[30%] cursor-target", // xl+: ~3.5 cards
-                ].join(" ")}
+                key={project.id} // ✅ fix 1: كان project.index
+                className="ps-4 basis-full md:basis-[40%] xl:basis-[30%] cursor-target"
               >
-                {/* group enables hover effects on children */}
-                {project.project_link && (
-                <Link href={project.project_link} target="_blank">
-                  <Card className="group h-full rounded-[4px] border-none overflow-hidden bg-transparent cursor-pointer">
-                    <CardContent className="p-0 flex flex-col">
-                      {/* Image (full-width) with hover scale */}
-                      <div className="relative w-full overflow-hidden rounded-[4px]">
-                        {/* slightly shorter aspect */}
-                        <div className="relative w-full aspect-[16/10]">
-                          <Image
-                            src={project.image}
-                            alt={project.name || `Card ${index + 1}`}
-                            fill
-                            className="object-fill transition-transform duration-500 ease-out group-hover:scale-105 will-change-transform"
-                            sizes="(min-width:1280px) 40vw, (min-width:768px) 40vw, 100vw"
-                            priority={index < 2}
-                          />
-                        </div>
+                {/* ✅ fix 2: بيعرض الكارد دايماً، الـ Link بس اللي بيتشرط */}
+                <Card className="group h-full rounded-[4px] border-none overflow-hidden bg-transparent cursor-pointer">
+                  <CardContent className="p-0 flex flex-col">
+                    <div className="relative w-full overflow-hidden rounded-[4px]">
+                      <div className="relative w-full aspect-[16/10]">
+                        <Image
+                          src={project.image}
+                          alt={project.name || `Card ${index + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 will-change-transform" // ✅ fix 3: كان object-fill
+                          sizes="(min-width:1280px) 40vw, (min-width:768px) 40vw, 100vw"
+                          priority={index < 2}
+                        />
                       </div>
+                    </div>
 
-                      {/* Text slides smoothly on card hover (dir-aware) */}
-                      <div
-                        className={`py-4 flex flex-col gap-2 mt-2 transform transition-transform duration-500 ease-out ${
-                          locale === "en"
-                            ? "group-hover:translate-x-3"
-                            : "group-hover:-translate-x-3"
-                        }`}
-                      >
-                        <h3 className="text-white text-base sm:text-xl font-semibold leading-tight">
-                          {project.name}
-                        </h3>
-                        <p className="text-white/70 text-sm sm:text-base leading-relaxed line-clamp-2">
-                          {project.short_desc}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-                )}
+                    <div
+                      className={`py-4 flex flex-col gap-2 mt-2 transform transition-transform duration-500 ease-out ${
+                        locale === "en"
+                          ? "group-hover:translate-x-3"
+                          : "group-hover:-translate-x-3"
+                      }`}
+                    >
+                      {/* ✅ العنوان والوصف بيتعرضوا دايماً */}
+                      <h3 className="text-white text-base sm:text-xl font-semibold leading-tight">
+                        {project.name}
+                      </h3>
+                      <p className="text-white/70 text-sm sm:text-base leading-relaxed line-clamp-2">
+                        {project.short_desc}
+                      </p>
+
+                      {/* ✅ لو في link يعرض زرار، لو مفيش متعرضش */}
+                      {project.project_link && (
+                        <Link
+                          href={project.project_link}
+                          target="_blank"
+                          className="mt-1 text-main-primary text-sm font-medium w-fit hover:underline"
+                        >
+                          {locale === "ar" ? "عرض المشروع ←" : "View Project →"}
+                        </Link>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
               </CarouselItem>
             ))}
         </CarouselContent>
 
-        {/* Controls BELOW (inside Carousel for context) */}
+        {/* ✅ fix 4: أضفنا initial و whileInView على controls */}
         <motion.div
           custom={isRTL}
           variants={controlsContainerVar}
-          className={`sm:h-20 flex items-center gap-4 sm:me-20 xl:me-40 justify-end`}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="sm:h-20 flex items-center gap-4 sm:me-20 xl:me-40 justify-end"
         >
           <motion.div
             variants={controlsItemVar}
