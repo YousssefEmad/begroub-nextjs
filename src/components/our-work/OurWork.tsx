@@ -16,7 +16,7 @@ export default function OurWork({
   const locale = useLocale();
   return (
     <div className="w-full min-h-fit xl:min-h-screen bg-main-black2 text-main-white pt-8 xl:pt-20 border-b border-white/10">
-      <div className="flex flex-col gap-6 md:gap-8 xl:gap-12 justify-start items-center container mx-auto">
+      <div className="flex flex-col gap-6 md:gap-8 xl:gap-12 justify-start items-center container-fluid">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
