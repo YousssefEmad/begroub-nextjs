@@ -286,7 +286,7 @@ export default function About({
                                 {/* Solid inner ring */}
                                 <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-full border border-main-primary/30 bg-main-primary/5 flex items-center justify-center">
                                   <span className="text-main-primary font-black text-lg xl:text-xl tracking-tighter">
-                                    {item.number}
+                                    +{item.number}
                                   </span>
                                 </div>
                               </div>
