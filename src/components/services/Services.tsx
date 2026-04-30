@@ -262,7 +262,7 @@ export default function Services({
         >
           {/* icon + heading */}
           <motion.div
-            className="mb-0"
+            className="mb-5"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -324,7 +324,7 @@ export default function Services({
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="text-center space-y-6"
               >
-                <motion.div
+                {/* <motion.div
                   className="prose prose-invert prose-lg max-w-none mx-auto text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -338,7 +338,7 @@ export default function Services({
                   />
 
                   {renderTabsContent(activeService.tabs)}
-                </motion.div>
+                </motion.div> */}
 
                 {/* Enhanced call-to-action area */}
                 <motion.div

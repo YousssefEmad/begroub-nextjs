@@ -13,6 +13,7 @@ import {
 import ModernTextEffect from "../ModernTextEffect";
 import { Link } from "@/navigations";
 import { BranchLocation } from "@/types/contactApiTypes";
+import "flag-icons/css/flag-icons.min.css";
 
 // ===== Easing / shared timing =====
 const easeOut = [0.22, 1, 0.36, 1] as const;
@@ -437,12 +438,10 @@ export default function ContactUs({
                 <div className="relative p-5 flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     <span
-                      className="text-2xl"
-                      role="img"
-                      aria-label={location.country}
-                    >
-                      {location.flag}
-                    </span>
+                        className={`fi fi-${location.flag.toLowerCase()} rounded-sm`}
+                        style={{ width: "28px", height: "20px", display: "inline-block" }}
+                        aria-label={location.country}
+                      />
                     <span className="text-lg font-bold text-white group-hover:text-main-primary transition-colors duration-300">
                       {location.country}
                     </span>
@@ -451,11 +450,13 @@ export default function ContactUs({
                   <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-transparent" />
 
                   <div
-                    className={`${location.offices.length > 1
-                        ? "grid grid-cols-1 md:grid-cols-3 gap-5"
-                        : "flex flex-col gap-3"
-                      }`}
-                  >
+                      className={`grid grid-cols-1 gap-5`}
+                      style={{
+                        gridTemplateColumns: location.offices.length > 1
+                          ? `repeat(${Math.min(location.offices.length, 3)}, 1fr)`
+                          : "1fr"
+                      }}
+                    >
                     {location.offices.map((office) => (
                       <div
                         key={office.name}

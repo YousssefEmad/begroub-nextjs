@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import "../styles/globals.css";
+import "flag-icons/css/flag-icons.min.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import TargetCursor from "@/components/TargetCursor";
