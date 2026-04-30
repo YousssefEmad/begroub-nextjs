@@ -15,10 +15,8 @@ import { Link } from "@/navigations";
 import { BranchLocation } from "@/types/contactApiTypes";
 import "flag-icons/css/flag-icons.min.css";
 
-// ===== Easing / shared timing =====
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
-// ===== Variants =====
 const containerVar: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -55,8 +53,6 @@ const popBlurIn: Variants = {
   },
 };
 
-
-// ===== InfoCard Component =====
 function InfoCard({
   icon,
   label,
@@ -69,7 +65,7 @@ function InfoCard({
   delay?: number;
 }) {
   const [hovered, setHovered] = useState(false);
-
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
@@ -81,7 +77,6 @@ function InfoCard({
       className="relative group cursor-default flex-1"
       style={{ perspective: "800px" }}
     >
-      {/* Outer glow */}
       <motion.div
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.4 }}
@@ -92,7 +87,6 @@ function InfoCard({
         }}
       />
 
-      {/* Card body */}
       <motion.div
         animate={{ rotateX: hovered ? -2 : 0, scale: hovered ? 1.015 : 1 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -108,7 +102,6 @@ function InfoCard({
           transition: "background 0.4s ease, box-shadow 0.4s ease",
         }}
       >
-        {/* Shimmer sweep */}
         <motion.div
           animate={{ x: hovered ? "200%" : "-100%" }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
@@ -120,9 +113,7 @@ function InfoCard({
           }}
         />
 
-        {/* Icon container — larger, with background pill */}
         <div className="relative shrink-0">
-          {/* Ambient glow blob */}
           <motion.div
             animate={{
               opacity: hovered ? 0.7 : 0.25,
@@ -136,7 +127,6 @@ function InfoCard({
             }}
           />
 
-          {/* Icon pill bg */}
           <motion.div
             animate={{
               backgroundColor: hovered
@@ -168,7 +158,6 @@ function InfoCard({
           </motion.div>
         </div>
 
-        {/* Divider */}
         <div
           className="shrink-0 self-stretch w-px"
           style={{
@@ -179,7 +168,6 @@ function InfoCard({
           }}
         />
 
-        {/* Text */}
         <div className="flex flex-col gap-1.5 min-w-0 flex-1">
           <motion.span
             animate={{
@@ -206,7 +194,6 @@ function InfoCard({
           </motion.span>
         </div>
 
-        {/* Corner dot */}
         <motion.div
           animate={{ opacity: hovered ? 1 : 0, scale: hovered ? 1 : 0.4 }}
           transition={{ duration: 0.3 }}
@@ -221,12 +208,11 @@ function InfoCard({
   );
 }
 
-// ===== Main Component =====
 export default function ContactUs({
   contactData,
   contactSection,
   servicesData,
-  branchLocations
+  branchLocations,
 }: {
   contactData: ContactDataTypes;
   contactSection: ContactSectionTypes;
@@ -310,7 +296,6 @@ export default function ContactUs({
           className="flex flex-col xl:flex-row-reverse gap-8 xl:gap-16 w-full items-stretch"
           variants={containerVar}
         >
-          {/* Contact Form — RIGHT */}
           <motion.div
             className="w-full xl:w-[55%]"
             variants={rightInSpring}
@@ -322,7 +307,6 @@ export default function ContactUs({
             <ContactForm servicesData={servicesData} />
           </motion.div>
 
-          {/* Info cards — LEFT */}
           <motion.div
             className="w-full xl:w-[45%] flex flex-col gap-4 xl:self-stretch"
             variants={leftInSpring}
@@ -339,7 +323,7 @@ export default function ContactUs({
                   <Link
                     href={`https://www.google.com/maps?q=${encodeURIComponent(
                       contactData?.address ||
-                      "25 Asmaa Fahmy, Ard El Golf, Heliopolis, Cairo, Egypt",
+                        "25 Asmaa Fahmy, Ard El Golf, Heliopolis, Cairo, Egypt"
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -348,7 +332,7 @@ export default function ContactUs({
                     <span>
                       {contactData?.address ||
                         t(
-                          "25 Asmaa Fahmy, Ard El Golf, Heliopolis, Cairo, Egypt",
+                          "25 Asmaa Fahmy, Ard El Golf, Heliopolis, Cairo, Egypt"
                         )}
                     </span>
                   </Link>
@@ -414,8 +398,9 @@ export default function ContactUs({
             <div className="w-20 h-1 bg-gradient-to-r from-main-primary to-main-primary/30 rounded-full mx-auto mt-4" />
           </motion.div>
 
+          {/* ── Grid ── */}
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            className="grid grid-cols-2 gap-5"
             variants={containerVar}
           >
             {branchLocations.map((location, locIdx) => (
@@ -426,22 +411,28 @@ export default function ContactUs({
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ delay: locIdx * 0.08 }}
-                className={`group relative rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden
-                           hover:border-main-primary/40 transition-all duration-500${location.offices.length > 1
-                    ? " sm:col-span-2 lg:col-span-3"
-                    : ""
-                  }`}
+                // لو عنده أكتر من مكتب واحد → يأخد العرض كامل
+                // لو مكتب واحد → يأخد نص العرض (col-6)
+                style={{
+                  gridColumn: location.offices.length > 1 ? "1 / -1" : "span 1",
+                }}
+                className="group relative rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden hover:border-main-primary/40 transition-all duration-500"
               >
                 <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-main-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-br from-main-primary/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 <div className="relative p-5 flex flex-col gap-4">
-                  <div className="flex items-center gap-3">
+                  {/* Country header */}
+                  <div className="flex items-center gap-3 justify-center">
                     <span
-                        className={`fi fi-${location.flag.toLowerCase()} rounded-sm`}
-                        style={{ width: "28px", height: "20px", display: "inline-block" }}
-                        aria-label={location.country}
-                      />
+                      className={`fi fi-${location.flag.toLowerCase()} rounded-sm`}
+                      style={{
+                        width: "28px",
+                        height: "20px",
+                        display: "inline-block",
+                      }}
+                      aria-label={location.country}
+                    />
                     <span className="text-lg font-bold text-white group-hover:text-main-primary transition-colors duration-300">
                       {location.country}
                     </span>
@@ -449,21 +440,25 @@ export default function ContactUs({
 
                   <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-transparent" />
 
+                  {/* Offices grid */}
                   <div
-                      className={`grid grid-cols-1 gap-5`}
-                      style={{
-                        gridTemplateColumns: location.offices.length > 1
+                    className="grid grid-cols-1 gap-5"
+                    style={{
+                      gridTemplateColumns:
+                        location.offices.length > 1
                           ? `repeat(${Math.min(location.offices.length, 3)}, 1fr)`
-                          : "1fr"
-                      }}
-                    >
+                          : "1fr",
+                    }}
+                  >
                     {location.offices.map((office) => (
+                      
                       <div
                         key={office.name}
-                        className={`flex flex-col gap-3 ${location.offices.length > 1
+                        className={`flex flex-col gap-3 text-center ${
+                          location.offices.length > 1
                             ? "md:border-e md:border-white/10 md:pe-5 md:last:border-e-0 md:last:pe-0"
                             : ""
-                          }`}
+                        }`}
                       >
                         {location.offices.length > 1 && (
                           <span className="text-xs font-semibold text-main-primary/70 uppercase tracking-wider">
@@ -471,7 +466,7 @@ export default function ContactUs({
                           </span>
                         )}
 
-                        <div className="flex items-start gap-3">
+                        <div className="flex items-start gap-3 justify-center">
                           <MapPin
                             size={16}
                             className="shrink-0 mt-0.5 text-main-primary/70"
@@ -481,18 +476,21 @@ export default function ContactUs({
                           </p>
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 justify-center">
                           <Phone
                             size={16}
                             className="shrink-0 text-main-primary/70"
                           />
                           <Link
-                            href={`tel:${office.phone.replace(/\s/g, "")}`}
-                            dir="ltr"
-                            className="text-sm text-white/70 hover:text-main-primary transition-colors duration-300 font-mono cursor-target"
-                          >
-                            {office.phone}
-                          </Link>
+                          href={`tel:${office.code_1 ?? ""}${office.phone.replace(/\s/g, "")}`}
+                          dir="ltr"
+                          className="text-sm text-white/70 hover:text-main-primary transition-colors duration-300 font-mono cursor-target"
+                        >
+                          {office.code_1 && (
+                            <span className="text-main-primary/70 me-1">{office.code_1}</span>
+                          )}
+                          {office.phone}
+                        </Link>
                         </div>
                       </div>
                     ))}

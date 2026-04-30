@@ -26,6 +26,8 @@ interface Office {
   name: string;
   address: string;
   phone: string;
+  code_1?: string;
+  code_2?: string;
   email: string | null;
   map_url: string | null;
   map_link: string | null;
