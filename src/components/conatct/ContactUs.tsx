@@ -400,7 +400,7 @@ export default function ContactUs({
 
           {/* ── Grid ── */}
           <motion.div
-            className="grid grid-cols-2 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5"
             variants={containerVar}
           >
             {branchLocations.map((location, locIdx) => (
@@ -411,8 +411,6 @@ export default function ContactUs({
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ delay: locIdx * 0.08 }}
-                // لو عنده أكتر من مكتب واحد → يأخد العرض كامل
-                // لو مكتب واحد → يأخد نص العرض (col-6)
                 style={{
                   gridColumn: location.offices.length > 1 ? "1 / -1" : "span 1",
                 }}
@@ -442,24 +440,24 @@ export default function ContactUs({
 
                   {/* Offices grid */}
                   <div
-                    className="grid grid-cols-1 gap-5"
-                    style={{
-                      gridTemplateColumns:
-                        location.offices.length > 1
-                          ? `repeat(${Math.min(location.offices.length, 3)}, 1fr)`
-                          : "1fr",
-                    }}
-                  >
+                      className={`grid gap-5 ${
+                        location.offices.length === 3
+                          ? "grid-cols-1 md:grid-cols-3"
+                          : location.offices.length === 2
+                          ? "grid-cols-1 sm:grid-cols-2"
+                          : "grid-cols-1"
+                      }`}
+                    >
                     {location.offices.map((office) => (
                       
                       <div
-                        key={office.name}
-                        className={`flex flex-col gap-3 text-center ${
-                          location.offices.length > 1
-                            ? "md:border-e md:border-white/10 md:pe-5 md:last:border-e-0 md:last:pe-0"
-                            : ""
-                        }`}
-                      >
+                          key={office.name}
+                          className={`flex flex-col gap-3 text-center ${
+                            location.offices.length > 1
+                              ? "sm:border-e sm:border-white/10 sm:pe-5 sm:last:border-e-0 sm:last:pe-0"
+                              : ""
+                          }`}
+                        >
                         {location.offices.length > 1 && (
                           <span className="text-xs font-semibold text-main-primary/70 uppercase tracking-wider">
                             {office.name}
