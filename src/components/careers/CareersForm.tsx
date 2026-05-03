@@ -64,7 +64,7 @@ export default function CareersForm({ jobPositions }: { jobPositions?: JobPositi
     name: z.string().min(3, t("Please Enter Your Full Name")),
     email: z.string().email(t("Enter A Valid Email")),
     phone: z.string().min(10, t("Enter A Valid Phone Number")),
-    job_position_id: z.string().min(1, t("Please Select A Job Position")),
+    job_position_id: z.string().min(1, t("Please Select A Job Department")),
     position: z.string().min(3, t("Please Enter Your Position")),
     cv: z
       .any()
@@ -280,13 +280,11 @@ export default function CareersForm({ jobPositions }: { jobPositions?: JobPositi
               render={({ field }) => (
                 <FormItem>
                   <motion.div variants={fadeUpVar}>
-                    <FormLabel className="text-white/90 text-base">
-                      {t("Job Position")}
-                    </FormLabel>
+                    <FormLabel className="text-white/90 text-base">{t("Job Department")}</FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
                         <SelectTrigger className="cursor-target bg-white/5 border-white/10 h-12 rounded-[8px] text-white focus:ring-0 focus:border-main-primary/50 transition-colors [&>span:not([data-placeholder])]:text-white [&>span[data-placeholder]]:text-white/30 [&>svg]:text-white [&>svg]:opacity-100">
-                          <SelectValue placeholder={t("Select A Job Position")} />
+                          <SelectValue placeholder={t("Select A Job Department")} />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent className="bg-[#1a1a1a] border-white/10 text-white rounded-[8px]">
