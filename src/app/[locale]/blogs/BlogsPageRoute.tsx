@@ -46,8 +46,8 @@ export default function BlogsPageRoute({
       items={blogData.map((b) => ({
         id: b.id,
         image: b.image,
-        desc: b.meta_title,
-        date: b.date || "Coming Soon",
+        desc: b.name,
+        date: b.date || "",
         slug: b.slug,
       }))}
       currentPage={currentPage}

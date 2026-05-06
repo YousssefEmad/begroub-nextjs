@@ -171,10 +171,8 @@ export default function BlogDetails({
                     </svg>
                     {formattedDate}
                   </span>
-                  <span className="w-1 h-1 rounded-full bg-[#6E717E]" />
                 </>
               )}
-              <span>8 min read</span>
             </motion.div>
           </motion.div>
 

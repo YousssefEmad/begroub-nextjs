@@ -94,6 +94,9 @@ const almarai = Almarai({
 export const metadata = {
   title: "Be Group - Digital Marketing Agency",
   description: "We Provide Digital Marketing Solutions For Your Business",
+  icons: {
+    icon: "/fav.png",
+  },
 };
 
 export default async function LocaleLayout({

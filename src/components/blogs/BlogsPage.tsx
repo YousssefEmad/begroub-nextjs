@@ -182,9 +182,11 @@ export default function BlogsPage({
                         {item.desc}
                       </MultiLineUnderline>
                     </h3>
-                    <div className="text-sm sm:text-base text-white/90">
-                      {item.date}
-                    </div>
+                    {item.date && (
+                      <div className="text-sm sm:text-base text-white/90">
+                        {item.date}
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.article>
